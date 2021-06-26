@@ -3,7 +3,7 @@
 pkgbase=esphomeyaml
 pkgname=esphome
 pkgver=1.19.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Solution for your ESP8266/ESP32 projects with Home Assistant"
 url="https://github.com/esphome/ESPHome"
 depends=('python-setuptools'
@@ -18,6 +18,7 @@ depends=('python-setuptools'
 	'python-ifaddr'
 	'python-pyaes'
 	'python-ecdsa'
+	'python-esphome-dashboard'
 	'platformio'
 	'esptool')
 license=('MIT')
