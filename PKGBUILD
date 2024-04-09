@@ -3,7 +3,7 @@
 pkgbase=esphomeyaml
 pkgname=esphome
 pkgver=2024.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Solution for your ESP8266/ESP32 projects with Home Assistant"
 url="https://github.com/esphome/ESPHome"
 depends=('python-setuptools'
@@ -11,17 +11,22 @@ depends=('python-setuptools'
 	'python-yaml'
 	'python-paho-mqtt'
 	'python-colorlog'
+        'python-icmplib'
 	'python-tornado'
-	'python-protobuf'
 	'python-tzlocal'
+	'python-tzdata'
 	'python-pyserial'
-	'python-ifaddr'
-	'python-pyaes'
-	'python-ecdsa'
-	'python-argcomplete'
 	'platformio-core'
 	'esptool'
-	'python-aioesphomeapi')
+	'python-click'
+	'python-aioesphomeapi'
+	'python-zeroconf'
+	'python-magic'
+	'python-ruamel-yaml'
+	'python-kconfiglib'
+	'python-pyparsing'
+	'python-argcomplete'
+)
 optdepends=('python-esphome-dashboard: esphome dashboard addition')
 license=('MIT')
 arch=('any')
