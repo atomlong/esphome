@@ -2,11 +2,11 @@
 
 pkgbase=esphomeyaml
 pkgname=esphome
-pkgver=2024.5.0
+pkgver=2024.5.2
 pkgrel=0
 pkgdesc="Solution for your ESP8266/ESP32 projects with Home Assistant"
 url="https://github.com/esphome/ESPHome"
-depends=('python-setuptools'
+depends=('python-build' 'python-installer' 'python-wheel'
 	'python-voluptuous'
 	'python-yaml'
 	'python-paho-mqtt'
@@ -32,7 +32,7 @@ license=('MIT')
 arch=('any')
 replaces=('esphomeyaml')
 source=("https://github.com/esphome/ESPHome/archive/${pkgver}.tar.gz")
-sha256sums=('d0178a2c6823d5c2fac069acf62b592d9c5cac532289d92596d05c751c016787')
+sha256sums=('6562fab0d0f994d8a17c5bf3cef1d50ef217536cf8704ddb8f630354564b9f84')
 
 prepare() {
 	cd "$srcdir/${pkgname}-${pkgver}"
@@ -41,12 +41,12 @@ prepare() {
 
 build() {
 	cd "$srcdir/${pkgname}-${pkgver}"
-	python setup.py build
+        python -m build --wheel --no-isolation
 }
 
 package() {
 	cd "$srcdir/${pkgname}-${pkgver}"
-	python setup.py install --root="$pkgdir" --optimize=1 --skip-build
+        python -m installer --destdir="$pkgdir" dist/*.whl
 }
 
 check() {
